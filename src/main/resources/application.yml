@@ -1,0 +1,10 @@
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:versionTrackerServiceDatabase
+    username: rootUser
+    password: securedPassword
+  application:
+    name: versionTrackerService
+server:
+  port: 1212
