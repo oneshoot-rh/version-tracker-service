@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 
 public record VersionUpdateRequest(
         @NotBlank String serviceName,
-        @NotBlank DeploymentEnv deploymentEnv,
-        @NotBlank VersionPart versionPart
+        @NotBlank String deploymentEnv,
+        @NotBlank String versionPart
 ) {
 }

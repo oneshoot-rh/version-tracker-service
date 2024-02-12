@@ -17,11 +17,11 @@ public class ServicesVersioningResource {
     private final ServicesVersioningService servicesVersioningService;
 
     @GetMapping("/{serviceName}/{deploymentEnv}")
-    public ResponseEntity<String> getDeploymentVersion(@PathVariable @NotBlank String serviceName, @PathVariable @NotBlank DeploymentEnv deploymentEnv){
-        return ResponseEntity.ok(servicesVersioningService.getVersionNumber(serviceName,deploymentEnv));
+    public ResponseEntity<String> getDeploymentVersion(@PathVariable @NotBlank String serviceName, @PathVariable @NotBlank String deploymentEnv){
+        return ResponseEntity.ok(servicesVersioningService.getVersionNumber(serviceName,DeploymentEnv.valueOf(deploymentEnv)));
     }
 
-    @PostMapping("/{serviceName}/{deploymentEnv}")
+    @PostMapping
     public ResponseEntity<String> updateDeploymentEnv(@RequestBody VersionUpdateRequest versionUpdateRequest){
         return ResponseEntity.ok(servicesVersioningService.updateVersionNumber(versionUpdateRequest));
     }
