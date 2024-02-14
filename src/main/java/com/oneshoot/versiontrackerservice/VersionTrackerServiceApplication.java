@@ -22,12 +22,12 @@ public class VersionTrackerServiceApplication {
     }
 
 
-    @Bean
+    //@Bean
     CommandLineRunner runner(){
         return args ->{
             List<ServiceVersioningEntity> versioningEntities = List.of(
-                    new ServiceVersioningEntity(1L,"oneshootmain","1.1.0","1.0.0", LocalDateTime.now()),
-                    new ServiceVersioningEntity(2L,"resumeParser","1.2.0","1.1.0", LocalDateTime.now())
+                    new ServiceVersioningEntity(1L,"oneshootmain","1.0.0","1.0.0", LocalDateTime.now()),
+                    new ServiceVersioningEntity(2L,"oneshootapigateway","1.0.0","1.0.0", LocalDateTime.now())
             );
             servicesVersioningRepository.saveAll(versioningEntities);
         };
